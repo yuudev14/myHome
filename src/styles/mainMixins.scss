@@ -1,0 +1,33 @@
+@import 'variables';
+
+@mixin main {
+    .main_section{
+        height: 100%;
+        display: flex;
+        
+        .main_container{
+            margin: auto;
+            margin-bottom: 150px;
+            text-align: center;
+        }
+        h1, h2, h3{
+            font-family: $primaryFont, sans-serif;
+        }
+        h1{
+            font-size: 7em;
+            padding: 0;
+        }
+        h2{
+            font-size: 2em;
+        }
+        h3{
+            font-size: 1.5em;
+        }
+        h4, p{
+            font-family: $secondaryFont, sans-serif;
+        }
+
+        
+    }
+    
+}

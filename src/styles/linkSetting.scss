@@ -1,0 +1,23 @@
+@mixin LinkSetting {
+    .links-option_section{
+        
+        .links-option_container{
+            height: 70px;
+            width: 70px;
+            background-color: red;
+            transition: 0.5s;
+
+        }
+        .links-option_active{
+            width: 100% !important;
+            height: 100%;
+        }
+
+        i{
+            font-size: 2rem;
+            margin: 20px;
+            cursor: pointer;
+        }
+    }
+    
+}

@@ -1,10 +1,17 @@
 import React from 'react';
+import LinkSetting from './components/link_seting/link_setting';
+import Main from './components/main/main';
+import ToDos from './components/todos/todos';
+import './styles/main.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <main>
+        <LinkSetting />
+        <Main />
+        <ToDos />
+      </main>
     </div>
   );
 }
