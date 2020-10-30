@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import url from '../../assets/url.png'
 
 const LinkSetting = ({setBackground, setUser, settings, setColor}) => {
     const changeUsername = (e) => {
@@ -27,13 +28,62 @@ const LinkSetting = ({setBackground, setUser, settings, setColor}) => {
     const color = (e) => {
         setColor(e.target.value)
     }
+
+    const addLinkExpand = (e) => {
+        e.target.parentElement.classList.toggle('add_link_expand');
+        e.target.classList.toggle('addLinkActive');
+        e.target.parentElement.lastChild.classList.toggle('activeForm');
+
+    }
+
+
     return ( 
         <section className='links-option_section'>
             <div className='links-option_container'>
                 <i onClick={active} className='fa fa-bars'></i>
                 <div className='links-option_content'>
                     <div className='links'>
-                        <button>Add Link</button>
+                        <div className='add_link'>
+                            <h3 onClick={addLinkExpand}>Add Shortcut</h3>
+                            <form>
+                                <label>
+                                    Name
+                                    <input type='text' />
+                                </label>
+
+                                <label>
+                                    URL
+                                    <input type='text' />
+                                </label>
+
+                                <label>
+                                    icon
+                                    <input type='file' />
+                                </label>
+
+                                <input type='submit' />
+                            </form>
+                            
+                        </div>
+                        <div className='shortcuts'>
+                            <i className='fa fa-ellipsis-h'></i>
+                            <img src={url}/>
+                            <p>Name</p>
+                            <div></div>
+                        </div>
+                        <div className='shortcuts'>
+                            <i className='fa fa-ellipsis-h'></i>
+                            <img src={url}/>
+                            <p>Name</p>
+                            <div></div>
+                        </div>
+                        <div className='shortcuts'>
+                            <i className='fa fa-ellipsis-h'></i>
+                            <img src={url}/>
+                            <p>Name</p>
+                            <div></div>
+                        </div>
+
                     </div>
                     <div className='options'>
                         <div className='background_options'>
