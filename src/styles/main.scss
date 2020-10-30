@@ -1,16 +1,17 @@
 @import 'mainMixins';
 @import 'linkSetting';
+@import 'TodosMixins';
 
 main{
     width: 100%;
     height: 100vh;
     background-color: aquamarine;
-    display: flex;
-    flex-wrap: wrap;
-    section{
-        flex-grow: 1;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: url('../assets/city.jpg') center center no-repeat fixed;
+    background-size: cover;
     @include main;
     @include LinkSetting;
+    @include Todos
 
 }
