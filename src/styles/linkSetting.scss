@@ -63,15 +63,23 @@
             display: flex;
             flex-wrap: wrap;
             height: 50%;
-            justify-content: space-between;
+            // justify-content: space-between;
             align-content: flex-start;
             overflow-y: auto;
+            overflow-x: hidden;
+            
+            
+            a{
+                text-decoration: none;
+                color: white;
+            }
             .shortcuts{
                 width: 70px;
                 height: 70px;
                 position: relative;
-                margin-top: 5px;
                 text-align: center;
+                margin: 5px;
+                overflow: hidden;
                 i{
                     background-color: transparent;
                     position: absolute;
@@ -82,14 +90,37 @@
                     padding: 0;
                     height: max-content;
                     width: max-content;
-
                 }
                 img{
-                    width: 50%;
+                    width: 2vw;
+                    height: 2vw;
+                    border-radius: 2vw;
+                }
+                .shortcutOptions{
+                    position: absolute;
+                    background-color: black;
+                    padding: 10px;
+                    top: 0;
+                    display: none;
+                    border-radius: 13px;
+                    ul{
+                        list-style-type: none;
+                    }
+                    li{
+                        margin: 5px;
+                        font-size: 80%;
+                        cursor: pointer;
+                        &:hover{
+                            color: rgb(140, 140, 140);
+                        }
+                    }
+                }
+                .shortcutOptionsActive{
+                    display: block;
                 }
             }
             .add_link{
-                margin-top: 5px;
+                margin: 5px;
                 padding : 10px;
                 height: 70px;
                 width: 70px;

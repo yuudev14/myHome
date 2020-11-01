@@ -1,15 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { MYHOME } from '../context/myHomeData';
 
 const ToDos = () => {
-    const [todos, setTodos] = useState(()=>{
-        return localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
-    });
-
-    useEffect(() => {
-        console.log(todos);
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos])
-
+    const {myHome, dispatch} = useContext(MYHOME);
 
     const active = () => {
         document.querySelector('.todos_content').classList.toggle('todos_content_active');
@@ -19,25 +12,15 @@ const ToDos = () => {
         e.preventDefault();
         let todo = document.querySelector('.toDoInput');
 
-        setTodos([{
-            todo : todo.value,
-            finished : false
-        }, ...todos]);
+        dispatch({type: 'ADD_TODOS', data : {todo : todo.value, finished : false}})
         todo.value = '';
     }
     const deleteTodo = (i) => {
-        setTodos(todos.filter((todo, index) => index !== i));
+        dispatch({type: 'DELETE_TODOS', data : i});
     }
 
     const setFinish = (i) => {
-
-        setTodos(todos.map((todo, index) =>{
-            if(index === i){
-                todo.finished = !todo.finished
-            }
-            return todo
-        }));
-
+        dispatch({type: 'IS_TODO_FINISH', data : i});
     }
     return ( 
         <section className='todos_section'>
@@ -50,7 +33,7 @@ const ToDos = () => {
                         <input className='toDoInput' type='text' placeholder='  Add Todos' />
                     </form>
                     <ul>
-                        {todos.length > 0 && todos.map((todo, i) => (
+                        {myHome.todos !== undefined && myHome.todos.map((todo, i) => (
                             <li key={i}>
                                 <label>
                                     <span className={`checkbox ${todo.finished === false ? '' : 'finish_span'}`} ></span>

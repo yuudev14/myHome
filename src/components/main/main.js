@@ -1,7 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
+import { MYHOME } from '../context/myHomeData';
 
-const Main = ({user}) => {
+const Main = () => {
+    const {myHome} = useContext(MYHOME);
+
+
+
     const [dates, setDates] = useState(Date.now);   
     const [location, setLocation] = useState({
         lat : 0,
@@ -81,7 +86,7 @@ const Main = ({user}) => {
                     <span className='seconds'> {seconds}</span>
                 </div>
                 <div className='intro'>
-                    <h2>{hour >= 0 && hour < 12 ? 'Good Morning' : hour >= 12 && hour < 18 ? 'Good Afternoon' : 'Good Evening'} {user}</h2>
+                    <h2>{hour >= 0 && hour < 12 ? 'Good Morning' : hour >= 12 && hour < 18 ? 'Good Afternoon' : 'Good Evening'} {myHome.user}</h2>
                 </div>
                 <div className='weather'>
                     <p>{currentWeather.name} - <span  className='temp'>{currentWeather.main && Math.floor(currentWeather.main.temp - 273.15) + '°C'}</span></p>
