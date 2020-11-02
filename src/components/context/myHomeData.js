@@ -18,7 +18,6 @@ const MyHomeData = (props) => {
 
     useEffect(() => {
         localStorage.setItem('myHome', JSON.stringify(myHome));
-        console.log(myHome);
         document.querySelector('main').style.background = `url(${myHome.background !== 'default' ? myHome.background : defaultImage}) center center no-repeat fixed`;
         document.querySelector('main').style.backgroundSize = 'cover';
         document.querySelector('.main_section').style.color = myHome.color;

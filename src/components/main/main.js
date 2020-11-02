@@ -100,9 +100,9 @@ const Main = () => {
                                         <p className='max'>{currentWeather.main && Math.floor(currentWeather.main.temp_max - 273.15) + '°C'}</p>
                                         <p className='min'>{currentWeather.main && Math.floor(currentWeather.main.temp_min - 273.15) + '°C'}</p>
                                 </li>
-                                {forecast.length > 0 && forecast.map(list => (
+                                {forecast.length > 0 && forecast.map((list, i) => (
                                     
-                                    <li>
+                                    <li key={i}>
                                         <h4>{list.main && `${dayLists[new Date(list.dt_txt).getDay()].slice(0,3)}`}</h4>
                                         <img src={`http://openweathermap.org/img/wn/${list.weather[0].icon}.png`} />
                                         <p className='max'>{list.main && Math.floor(list.main.temp_max - 273.15) + '°C'}</p>

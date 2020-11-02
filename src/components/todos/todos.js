@@ -11,9 +11,10 @@ const ToDos = () => {
     const addTodo = (e) => {
         e.preventDefault();
         let todo = document.querySelector('.toDoInput');
-
-        dispatch({type: 'ADD_TODOS', data : {todo : todo.value, finished : false}})
-        todo.value = '';
+        if(todo.value !== ''){
+            dispatch({type: 'ADD_TODOS', data : {todo : todo.value, finished : false}})
+            todo.value = '';
+        }
     }
     const deleteTodo = (i) => {
         dispatch({type: 'DELETE_TODOS', data : i});

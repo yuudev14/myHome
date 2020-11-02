@@ -13,6 +13,9 @@ const App = () => {
           <Main/>
           <ToDos />
         </main>
+        <div className='catch'>
+          <h1>ONLY FOR 800PX AND ABOVE</h1>
+        </div>
       
     </div>
   );
