@@ -40,16 +40,16 @@ const Main = () => {
     useEffect(() => {
         let count = 1000;
         const weather = setInterval(() => {
-            axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=80595e901e5bb1c00132ed60b6c729b0`)
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=80595e901e5bb1c00132ed60b6c729b0`)
                 .then(res => {
                     setCurrentWeather(res.data);
                 });
-            axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&appid=80595e901e5bb1c00132ed60b6c729b0`)
+            axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&appid=80595e901e5bb1c00132ed60b6c729b0`)
                 .then(res => {
                     let forecastList = res.data.list.filter(list => new Date(list.dt_txt).getDate() !== date && new Date(list.dt_txt).getHours() === 12)
                     setForecast(forecastList);
                 });
-            axios.get('http://quotes.rest/qod.json')
+            axios.get('https://quotes.rest/qod.json')
                 .then(res => setQuote(res.data.contents.quotes[0]));
 
         }, count);
