@@ -43,8 +43,8 @@ const BackgroundSetting = () => {
                     </form>
                 </label>
             </div>
-            <div>
-                <label htmlFor='colorField'>
+            <div >
+                <label className='color' htmlFor='colorField'>
                     Font Color
                     <input onChange={color} id='colorField' type="color" value={myHome.color}></input>
                 </label>

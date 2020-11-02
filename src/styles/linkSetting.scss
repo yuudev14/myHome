@@ -14,9 +14,7 @@
             margin: .3vw 0;
         }
         form{
-            input[type=submit], button{
-                padding: 2px;
-            }
+            font-size: 1vw;
             button{
                 margin: 0 12px;
                 
@@ -74,8 +72,8 @@
                 color: white;
             }
             .shortcuts{
-                width: 70px;
-                height: 70px;
+                width: 5vw;
+                height: 5vw;
                 position: relative;
                 text-align: center;
                 margin: 5px;
@@ -86,7 +84,7 @@
                     margin: 0;
                     top: 0;
                     right: 0;
-                    font-size: 1em;
+                    font-size: 1vw;
                     padding: 0;
                     height: max-content;
                     width: max-content;
@@ -96,10 +94,13 @@
                     height: 2vw;
                     border-radius: 2vw;
                 }
+                p{
+                    font-size: 1.2vw;
+                }
                 .shortcutOptions{
                     position: absolute;
                     background-color: black;
-                    padding: 10px;
+                    padding: 0.5vw;
                     top: 0;
                     display: none;
                     border-radius: 13px;
@@ -108,7 +109,7 @@
                     }
                     li{
                         margin: 5px;
-                        font-size: 80%;
+                        font-size: 1vw;
                         cursor: pointer;
                         &:hover{
                             color: rgb(140, 140, 140);
@@ -122,12 +123,13 @@
             .add_link{
                 margin: 5px;
                 padding : 10px;
-                height: 70px;
-                width: 70px;
+                height: 5vw;
+                width: 5vw;
                 transition: 0.5s;
                 overflow: hidden;
                 h3{
                     text-align: center;
+                    margin-top: 1vw;
                     font-family: $secondaryFont, sans-serif;
                     cursor: pointer;
                     font-size: 1vw;
@@ -140,12 +142,17 @@
                     opacity: 0;
                     transition: 0.5s;
                     width: 100%;
-                    height: 90%;
+                    height: 50%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     input{
                         width: 90%;
+                        padding: 0.4vw;
+                        font-size: 1vw;
+                    }
+                    label{
+                        font-size: 1vw;
                     }
                 }
                 .activeForm{
@@ -166,7 +173,7 @@
             
         }
         .options, .links{
-            padding: 20px;
+            padding: 1.3vw;
             width: 90%;
             margin: auto;
             background-color: rgba(7, 7, 7, 0.6);
@@ -179,10 +186,29 @@
             flex-direction: column;
             justify-content: space-between;
             overflow: hidden;
+            p, label{
+                font-size: 1vw;
+            }
+            input, button{
+                padding: 0.4vw;
+                font-size: 1vw;
+            }
+            
         }
+        .color{
+            display: flex;
+            align-items: center;
+            input[type=color]{
+                height: 3vw;
+                width: 4vw;
+                margin: 0;
+            }
+
+        }
+        
 
         .links button{
-            height: 50px;
+            height: 1.5vw;
 
 
         }
